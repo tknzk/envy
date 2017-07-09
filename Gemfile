@@ -1,4 +1,9 @@
 # frozen_string_literal: true
 source "https://rubygems.org"
 
-# gem "rails"
+if v = ENV['CUSTOM_RUBY_VERSION']
+  ruby v
+end
+
+gem 'sinatra'
+gem 'haml'
