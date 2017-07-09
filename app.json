@@ -1,0 +1,26 @@
+{
+  "name": "ENVY",
+  "description": "Collects and send the visitor's browser environment values.",
+  "keywords": [
+    "Ruby",
+    "Sinatra"
+  ],
+  "website": "https://github.com/purintai/envy",
+  "repository": "https://github.com/purintai/envy",
+  "env": {
+    "CUSTOM_RUBY_VERSION": {
+      "description": "Ruby version",
+      "generator": "2.4.1"
+    },
+    "SLACK_TOKEN": {
+      "description": "Slack legacy token: https://api.slack.com/custom-integrations/legacy-tokens",
+      "value": ""
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "image": "heroku/ruby"
+}
