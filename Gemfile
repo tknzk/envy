@@ -6,5 +6,7 @@ if v = ENV['CUSTOM_RUBY_VERSION']
 end
 
 gem 'sinatra'
+gem 'sinatra-contrib'
 gem 'haml'
 gem 'puma'
+gem 'rest-client'
