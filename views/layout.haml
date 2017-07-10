@@ -1,0 +1,9 @@
+- title = nil
+
+!!!
+%html
+  %head
+    %title
+      - title || 'ENVY'
+  %body
+    = yield
