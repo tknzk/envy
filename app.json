@@ -10,10 +10,14 @@
   "env": {
     "CUSTOM_RUBY_VERSION": {
       "description": "Ruby version",
-      "generator": "2.4.1"
+      "value": "2.4.1"
     },
     "SLACK_TOKEN": {
       "description": "Slack legacy token: https://api.slack.com/custom-integrations/legacy-tokens",
+      "value": ""
+    },
+    "SLACK_CHANNEL": {
+      "description": "Slack channel",
       "value": ""
     }
   },
