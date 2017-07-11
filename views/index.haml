@@ -1,2 +1,5 @@
 %form{action: '/', method: 'post'}
-  %input{type: 'submit', value: 'Send', class: 'button'}
+  %input{type: 'text', id: 'js-values-field', name: 'jsenv', value: '', hidden: true}
+  %input{type: 'submit', id: 'submit-button', value: 'Send'}
+
+%script{type: 'text/javascript', src: "main.js?t=#{Time.now.to_i}"}

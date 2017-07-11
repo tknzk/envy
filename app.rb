@@ -18,6 +18,7 @@ class App < Sinatra::Base
 
     content = {}
     content[:inquery_token] = @inquiry_token
+    content[:javascript_env] = @debug = params[:jsenv]
     content[:http_headers] = request.env.select{ |header, _| header.start_with?('HTTP_') }
 
     payload = {
