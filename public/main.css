@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+form {
+  position: absolute;
+  top: 50%;
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+form input {
+  padding: 20px;
+}

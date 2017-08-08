@@ -1,32 +1,48 @@
-window.onload = function () {
-    values = {};
-    values['window.JSON'] = !!window.JSON;
-    values['window.localStorage'] = !!window.localStorage;
-    values['window.sessionStorage'] = !!window.sessionStorage;
+(function() {
+  function generateEnvyValueNavigatorPlugins() {
+    var ret = [],
+        plugins = window.navigator.plugins,
+        plugin;
 
-    values['navigator.appCodeName'] = navigator.appCodeName;
-    values['navigator.appName'] = navigator.appName;
-    values['navigator.appVersion'] = navigator.appVersion;
-    values['navigator.cookieEnabled'] = navigator.cookieEnabled;
-    values['navigator.language'] = navigator.language;
-    values['navigator.maxTouchPoints'] = navigator.maxTouchPoints;
-    values['navigator.onLine'] = navigator.onLine;
-    values['navigator.platform'] = navigator.platform;
-    values['navigator.product'] = navigator.product;
-    values['navigator.productSub'] = navigator.productSub;
-    values['navigator.userAgent'] = navigator.userAgent;
-    values['navigator.vendor'] = navigator.vendor;
-    values['navigator.vendorSub'] = navigator.vendorSub;
+    for (var i = 0, len = plugins.length; i < len; i++) {
+      plugin = plugins[i];
 
-    values['navigator.plugins'] = Array();
-    for (var i = 0, len = navigator.plugins.length; i < len; i++) {
-        values['navigator.plugins'][i] = {
-            name: (navigator.plugins)[i].name,
-            description: (navigator.plugins)[i].description,
-            version: (navigator.plugins)[i].version,
-            filename: (navigator.plugins)[i].filename
-        }
+      ret[i] = {
+        name: plugin.name,
+        description: plugin.description,
+        version: plugin.version,
+        filename: plugin.filename,
+      }
     }
 
-    document.getElementById('js-values-field').value = JSON.stringify(values);
-};
+    return ret;
+  }
+
+  function generateEnvyValue() {
+    var nav = window.navigator;
+
+    return {
+      'window.JSON': !!window.JSON,
+      'window.localStorage': !!window.localStorage,
+      'window.sessionStorage': !!window.sessionStorage,
+
+      'navigator.appCodeName': nav.appCodeName,
+      'navigator.appName': nav.appName,
+      'navigator.appVersion': nav.appVersion,
+      'navigator.cookieEnabled': nav.cookieEnabled,
+      'navigator.language': nav.language,
+      'navigator.maxTouchPoints': nav.maxTouchPoints,
+      'navigator.onLine': nav.onLine,
+      'navigator.platform': nav.platform,
+      'navigator.product': nav.product,
+      'navigator.productSub': nav.productSub,
+      'navigator.userAgent': nav.userAgent,
+      'navigator.vendor': nav.vendor,
+      'navigator.vendorSub': nav.vendorSub,
+
+      'navigator.plugins': generateEnvyValueNavigatorPlugins(),
+    };
+  }
+
+  document.getElementById('js-values-field').value = JSON.stringify(generateEnvyValue());
+})();
