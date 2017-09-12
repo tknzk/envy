@@ -32,16 +32,13 @@ section dl {
   border-radius: 3px;
   padding: 15px;
   margin-bottom: 20px;
+  font-size: 14px;
 }
 
 section dl dt {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 5px;
-}
-
-section dl dd {
-  font-size: 14px;
 }
 
 section dl dd ul {
